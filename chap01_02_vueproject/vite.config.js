@@ -15,13 +15,17 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:7777',
-        changeOrgin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
-  }
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       /* 백엔드가 컨테이너화 되기 전 */
+  //       // target: 'http://localhost:7777',
+
+  //       /* 백엔드가 컨테이너화 됨(8055:7777) */
+  //       target: 'http://localhost:8055',
+  //       changeOrgin: true,
+  //       rewrite: (path) => path.replace(/^\/api/, '')
+  //     }
+  //   }
+  // }
 })
