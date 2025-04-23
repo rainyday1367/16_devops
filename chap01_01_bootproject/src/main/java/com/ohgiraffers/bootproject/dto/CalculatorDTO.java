@@ -11,9 +11,9 @@ import lombok.*;
 @ToString
 public class CalculatorDTO {
     @NonNull
-    private int num1;
+    private Integer num1;
     @NonNull
-    private int num2;
+    private Integer num2;
 
     private int sum;
 }

@@ -54,7 +54,17 @@ const sendPlus = async () => {
   // });
 
   /* 5. 백엔드에서 cors, 프론트에서 X(kubernetes의 백엔드 워커노드로 요청) */
-  const response = await fetch(`http://localhost:30001/plus`, {
+  // const response = await fetch(`http://localhost:30001/plus`, {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json;charset=utf-8;'
+  //   },
+  //   body: JSON.stringify({num1: num1.value, num2: num2.value})
+  // });
+
+  /* 6. 백엔드에서 X, 프론트에서 X(kubernetes의 ingress 추가 후) */
+  /* http를 붙어 외부에서 통신하는 것이 아닌 내부에서 통신 ? */
+  const response = await fetch(`/boot/plus`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8;'
